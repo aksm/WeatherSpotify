@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var latitude = 0;
 	var longitude = 0;
 	$("#geolocate").on("click", geoFindMe);
-	
+
 	$("#city-button").on("click", function() {
 		city = $("#city-name").val();
 
@@ -44,7 +44,7 @@ $(document).ready(function(){
 	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
 
 	    var img = new Image();
-	    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+	    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false&key=AIzaSyBL02KJBq9tdQaDHkDzGTq8Ha4qy3Wf4vU";
 
 	    output.appendChild(img);
 	  };
