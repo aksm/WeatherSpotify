@@ -27,10 +27,11 @@ $(document).ready(function(){
 						$("#player").append("<iframe src='https://embed.spotify.com/?uri="+v.uri+"'width='300' height='80' frameborder='0' allowtransparency='true'></iframe>")
 					});
 				});
-		}
+		
 		});
 
-	} 
+	}
+	
 	$("#geolocate").on("click", geoFindMe);
 
 	$("#city-button").on("click", function() {
