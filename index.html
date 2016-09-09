@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Spotify Your Weather</title>
+	<!-- Link to jQuery -->
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<form id="get-city" onsubmit="return false">
+		<input id="city-name" type="text" placeholder="City">
+		<input type="button" id="city-button" value="Submit">
+	</form>
+	<p><button onclick="geoFindMe()">Get my location</button></p>
+	<div id="out"></div>
+	<h1></h1>
+	<p id="wind"></p>
+	<p id="humidity"></p>
+	<p id="temperature"></p>
+	<p id="weather-description"></p>
+	<div id="player"></div>
+	<script src="assets/js/app.js"></script>
+</body>
+</html>
