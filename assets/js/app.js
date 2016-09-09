@@ -2,7 +2,8 @@ $(document).ready(function(){
 	var city = ""
 	var latitude = 0;
 	var longitude = 0;
-
+	$("#geolocate").on("click", geoFindMe);
+	
 	$("#city-button").on("click", function() {
 		city = $("#city-name").val();
 
