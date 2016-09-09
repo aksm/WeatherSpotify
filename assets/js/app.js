@@ -11,28 +11,34 @@ $(document).ready(function(){
 			queryURL = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&units=imperial&APPID=20497d7277a6d8e11da54b4af9fbd7c7";
 		}
 			$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+				var description = response.weather[0].description;
 				$("h1").html(response.name);
 				$("#wind").html("Wind Speed: "+response.wind.speed+" miles/hour");		
 				$("#humidity").html("Humidity: "+response.main.humidity+"%");
 				$("#temperature").html("Temperature: "+response.main.temp+"&deg;F");
 				$("#weather-description").html("Weather: "+response.weather[0].description);
 
-				queryURL = "https://api.spotify.com/v1/search?q="+response.weather[0].description+"&type=track&limit=5"
+				var queryURL = "https://crossorigin.me/http://api.giphy.com/v1/gifs/search?q="+description+"&api_key=dc6zaTOxFJmzC&limit=1";
 
 				$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
-					$("#player").empty();
-					$.each(response.tracks.items, function(i, v){
-						$("#player").append("<iframe src='https://embed.spotify.com/?uri="+v.uri+"'width='300' height='80' frameborder='0' allowtransparency='true'></iframe>")
+					$("html").css("background-image", "url('"+response.data[0].images.original.url+"')");
+
+					queryURL = "https://api.spotify.com/v1/search?q="+description+"&type=track&limit=5"
+
+					$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+						$("#player").empty();
+						$.each(response.tracks.items, function(i, v){
+							$("#player").append("<iframe src='https://embed.spotify.com/?uri="+v.uri+"'width='300' height='80' frameborder='0' allowtransparency='true'></iframe>")
+						});
 					});
 				});
-		
 		});
 
 	}
 
-	$("#geolocate").on("click", geoFindMe);
+	$("body").on("click", "#geolocate", geoFindMe);
 
-	$("#city-button").on("click", function() {
+	$("body").on("click", "#city-button", function() {
 		city = $("#city-name").val();
 		getData("city");
 	});

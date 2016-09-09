@@ -2,23 +2,31 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Spotify Your Weather</title>
+	<title>Spotify and Giphy Your Weather</title>
 	<!-- Link to jQuery -->
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 	<meta name="google-site-verification" content="lbmLrJAKqpRvtO1foPmjKvpQIvNPCz9kUq_zn9KQljE" />
+
+	<!-- Reset CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 <body>
 	<form id="get-city" onsubmit="return false">
-		<input id="city-name" type="text" placeholder="City">
-		<input type="button" id="city-button" value="Submit">
+		<input id="city-name" type="text" placeholder="Location" required>
+		<input type="button" id="city-button" value="spotify and giphy my weather">
 	</form>
-	<p><button id="geolocate">Get my location</button></p>
+	<p><button id="geolocate">find me THEN spotify and giphy my weather</button></p>
 	<div id="out"></div>
-	<h1></h1>
-	<p id="wind"></p>
-	<p id="humidity"></p>
-	<p id="temperature"></p>
-	<p id="weather-description"></p>
+	<div id="weather">
+		<h1></h1>
+		<p id="wind"></p>
+		<p id="humidity"></p>
+		<p id="temperature"></p>
+		<p id="weather-description"></p>
+	</div>
 	<div id="player"></div>
 	<script src="assets/js/app.js"></script>
 </body>
